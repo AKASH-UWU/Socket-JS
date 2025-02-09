@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node SocketJs-Test-Activity.js",
     "dev": "bun dev",
-    "build": "echo 'No build step required' && npm start"
+    "build": "npm install && npm start"
+  },
+  "dependencies": {
+    "ws": "^8.7.0"
   },
   "author": "Akash-UwU",
-  "license": "ISC",
-  "dependencies": {
-    "ws": "^8.18.0"
-  }
+  "license": "ISC"
 }
