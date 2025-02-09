@@ -4,12 +4,10 @@
   "description": "",
   "main": "SocketJs-Test-Activity.js",
   "scripts": {
-  "start": "node index.js",
-  "dev": "bun dev", 
-  "build": "react-scripts build"
-},
-
-
-  "author": "",
+    "start": "node SocketJs-Test-Activity.js",
+    "dev": "bun dev",
+    "build": "echo 'No build step required'"
+  },
+  "author": "Akash-UwU",
   "license": "ISC"
 }
