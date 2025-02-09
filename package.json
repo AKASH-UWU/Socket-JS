@@ -9,5 +9,8 @@
     "build": "echo 'No build step required' && npm start"
   },
   "author": "Akash-UwU",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
 }
