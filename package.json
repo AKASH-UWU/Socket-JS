@@ -1,0 +1,13 @@
+{
+  "name": "socketjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SocketJs-Test-Activity.js",
+  "scripts": {
+  "start": "node SocketJs-Test-Activity.js",
+  "dev": "bun dev"
+},
+
+  "author": "",
+  "license": "ISC"
+}
