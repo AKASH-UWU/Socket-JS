@@ -1,5 +1,8 @@
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: process.env.PORT || 3000 });
+
+// Use the dynamic PORT from Render's environment or default to 3000 for local dev
+const port = process.env.PORT || 10000;  // Default to 10000 if not provided
+const wss = new WebSocket.Server({ host: '0.0.0.0', port: port });
 
 let activity = ''; // Initialize the activity as an empty string
 
@@ -21,9 +24,8 @@ wss.on('connection', (ws) => {
 
   ws.on('close', () => {
     console.log('[-] Client disconnected');
-    //activity = ''; // Reset activity when the client disconnects
-    //console.log('Activity reset to empty');
+    //activity = ''; // Optionally reset activity when client disconnects
   });
 });
 
-console.log('WebSocket server running on ws://localhost:3000');
+console.log(`WebSocket server running on ws://0.0.0.0:${port}`);
