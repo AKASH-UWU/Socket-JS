@@ -4,9 +4,11 @@
   "description": "",
   "main": "SocketJs-Test-Activity.js",
   "scripts": {
-  "start": "node SocketJs-Test-Activity.js",
-  "dev": "bun dev"
+  "start": "node index.js",
+  "dev": "bun dev", 
+  "build": "react-scripts build"
 },
+
 
   "author": "",
   "license": "ISC"
