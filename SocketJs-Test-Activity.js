@@ -1,5 +1,5 @@
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 3003 });
+const wss = new WebSocket.Server({ port: process.env.PORT || 3000 });
 
 let activity = ''; // Initialize the activity as an empty string
 
@@ -26,4 +26,4 @@ wss.on('connection', (ws) => {
   });
 });
 
-console.log('WebSocket server running on ws://localhost:3003');
+console.log('WebSocket server running on ws://localhost:3000');
