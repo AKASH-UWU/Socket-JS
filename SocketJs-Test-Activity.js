@@ -1,8 +1,17 @@
 const WebSocket = require('ws');
+const http = require('http');
 
-// Use the dynamic PORT from Render's environment or default to 3000 for local dev
-const port = process.env.PORT || 10000;  // Default to 10000 if not provided
-const wss = new WebSocket.Server({ host: '0.0.0.0', port: port });
+// Use the dynamic port from Render or default to 10000 for local development
+const port = process.env.PORT || 10000;
+
+// Create a basic HTTP server for Render to detect
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('WebSocket server is running');
+});
+
+// Set up WebSocket server to use the same port
+const wss = new WebSocket.Server({ server });
 
 let activity = ''; // Initialize the activity as an empty string
 
@@ -28,4 +37,7 @@ wss.on('connection', (ws) => {
   });
 });
 
-console.log(`WebSocket server running on ws://0.0.0.0:${port}`);
+// Start the HTTP server which binds to the port
+server.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on http://0.0.0.0:${port}`);
+});
